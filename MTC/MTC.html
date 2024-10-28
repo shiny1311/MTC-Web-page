@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTC</title>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #3eb48d;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative; /* Needed for dropdown positioning */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown {
+    display: none; /* Hide the dropdown by default */
+    position: absolute; /* Position it relative to the parent */
+    top: 100%; /* Position it below the parent */
+    left: 0;
+    background: #3eb48d; /* Same background as header */
+    padding: 10px 0;
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+.dropdown li {
+    margin: 0; /* Remove margin from dropdown items */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.hero {
+    background: #EDEFF1;
+    padding: 150px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.cta-button {
+    background: #3eb48d;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.courses, .about, .contact {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.course-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.course-item {
+    background: #F4F4F4;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+footer {
+    background: #3eb48d;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.slider {
+    position: relative;
+    max-width: 800px; /* Set max width for the slider */
+    margin: 0 auto; /* Center the slider */
+    overflow: hidden; /* Hide overflow */
+}
+
+.slide {
+    display: none; /* Hide all slides by default */
+}
+
+.slide img {
+    width: 100%; /* Make images responsive */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.slide.active {
+    display: block; /* Show the active slide */
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%; /* Make circular buttons */
+    font-size: 20px; /* Increase button size */
+}
+
+button.prev {
+    left: 10px; /* Position left */
+}
+
+button.next {
+    right: 10px; /* Position right */
+}
+.image {
+    height: 50cm;
+    width: 75cm;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MTC</h1>
+            <nav>
+                <ul>
+                    <li><a href="#courses">Courses</a>
+                        <ul class="dropdown">
+                            <li><a href="#web-development">Web Development</a></li>
+                            <li><a href="#data-science">Data Science</a></li>
+                            <li><a href="#digital-marketing">Digital Marketing</a></li>
+                            <li><a href="#artificial-intelligence">Artificial Intelligence</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="slider">
+                    <div class="slide active" class="image">
+                        <img src="C:\Users\Admin\Documents\MTC\Image 1.jpg" alt="Image 1">
+                    </div>
+                    <div class="slide" class="image">
+                        <img src="C:\Users\Admin\Documents\MTC\Image 2.jpg" alt="Image 2">
+                    </div>
+                    <div class="slide" class="image">
+                        <img src="C:\Users\Admin\Documents\MTC\Image 3.jpg" alt="Image 3">
+                    </div>
+                    <div class="slide" class="image">
+                        <img src="C:\Users\Admin\Documents\MTC\Image 4.jpg" alt="Image 3">
+                    </div>
+                    <div class="slide" class="image">
+                        <img src="C:\Users\Admin\Documents\MTC\Image 5.jpg" alt="Image 3">
+                    </div>
+                    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+                <a href="#courses" class="cta-button">Browse Courses</a>
+            </div>
+        </section>
+
+        <section id="courses" class="courses">
+            <div class="container">
+                <h2>Our Courses</h2>
+                <div class="course-list">
+                    <div class="course-item">
+                        <h3>Web Development</h3>
+                        <p>Learn how to build websites from scratch using HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <div class="course-item">
+                        <h3>Data Science</h3>
+                        <p>Explore the world of data analysis and machine learning.</p>
+                    </div>
+                    <div class="course-item">
+                        <h3>Digital Marketing</h3>
+                        <p>Understand the fundamentals of marketing in the digital age.</p>
+                    </div>
+                    <div class="course-item">
+                        <h3>Artificial Intelligence</h3>
+                        <p>Understand how to simulate human intelligence in machines and software systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>MTC is a corpporate training company.It is dedicated to provide high-quality educational resources to learners of all ages. Our mission is to make education accessible and engaging.</p>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>If you have any questions, feel free to reach out!</p>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <p>Follow us on Social Media :)</p>
+                <a href="www.facebook.com">facebook</a>
+                <a href="www.instagram.com">instagram</a>
+                <a href="www.youtube.com">youtube</a>
+                <a href="www.twitter.com">twitter</a>
+                <a href="www.gmail.com">gmail</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MTC. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="mtc2js.js"></script>
+</body>
+</html>
